@@ -40,7 +40,7 @@
 <h3 class="account-title">Login</h3>
 <p class="account-subtitle">Access to our dashboard</p>
 
-<form action="admin-dashboard.html">
+<form action="admin-dashboard.html" onsubmit="return validateForm()">
 <div class="input-block mb-4">
 <label class="col-form-label">Email Address</label>
 <input class="form-control" type="text" value="admin@sumitharit.com">
@@ -83,5 +83,21 @@ Forgot password?
 <script src="assets/js/app.js" type="35e666a37eb6e4c137a3a1c5-text/javascript"></script>
 <script src="assets/cloudflare-static/rocket-loader.min.js" data-cf-settings="35e666a37eb6e4c137a3a1c5-|49" defer></script></body>
 
+<script>
+  function validateForm() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
 
+    if (email === "" || password === "") {
+      alert("Email and Password must be filled out");
+      return false;
+    }
+    if (email === "admin@sumitharit.com" && password === "123456") {
+      alert("Email and Password must be filled out");
+      return false;
+    }
+    // Add more validation checks as needed
+    return true;
+  }
+</script>
 </html>

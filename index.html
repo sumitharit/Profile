@@ -93,11 +93,12 @@ Forgot password?
       return false;
     }
     if (email === "admin@sumitharit.com" && password === "123456") {
-      alert("Email and Password must be filled out");
-      return false;
+      
+      return true;
     }
     // Add more validation checks as needed
-    return true;
+    alert("Invalid credentials");
+    return false;
   }
 </script>
 </html>
